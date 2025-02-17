@@ -11,6 +11,7 @@ type BlogContextType = {
   blogs: Blog[];
   setBlogs: React.Dispatch<React.SetStateAction<Blog[]>>;
   addBlog: (newBlog: Blog) => void;
+  removeBlog: (id: number) => void;
 };
 
 const BlogContext = createContext<BlogContextType | undefined>(undefined);
@@ -45,12 +46,18 @@ export const BlogProvider = ({ children }: BlogProviderProps) => {
     },
   ]);
 
+  // CREATE
   const addBlog = (newBlog: Blog) => {
     setBlogs((prevBlogs) => [...prevBlogs, newBlog]);
   };
 
+  // DELETE
+  const removeBlog = (id: number) => {
+    setBlogs((prevBlogs) => prevBlogs.filter((blog) => blog.id !== id));
+  };
+
   return (
-    <BlogContext.Provider value={{ blogs, setBlogs, addBlog }}>
+    <BlogContext.Provider value={{ blogs, setBlogs, addBlog, removeBlog }}>
       {children}
     </BlogContext.Provider>
   );

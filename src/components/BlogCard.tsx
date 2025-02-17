@@ -1,5 +1,6 @@
 import { Box, Button, Container, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
+import { useBlogs } from "../contexts/BlogProvider";
 
 type Blog = {
   id: number;
@@ -13,13 +14,15 @@ type PropsType = {
 };
 
 const BlogCard = ({ blog }: PropsType) => {
+  const { removeBlog } = useBlogs();
+
   return (
     <Container
       key={blog.id}
       sx={{
         background: (theme) => theme.palette.primary.dark,
-        border: "1px solid",
-        borderColor: (theme) => theme.palette.primary.contrastText,
+        border: "2px solid",
+        borderColor: (theme) => theme.palette.primary.main,
         borderRadius: "8px",
         padding: "32px 24px",
         display: "flex",
@@ -71,6 +74,7 @@ const BlogCard = ({ blog }: PropsType) => {
           </Button>
           <Button
             title="Delete"
+            onClick={() => removeBlog(blog.id)}
             sx={{
               padding: "0",
               borderRadius: "4px",
