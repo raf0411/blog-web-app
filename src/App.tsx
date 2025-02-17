@@ -1,31 +1,23 @@
-import React from 'react';
-import { createTheme, ThemeProvider } from '@mui/material';
-import CssBaseline from '@mui/material';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BlogProvider } from './contexts/BlogProvider'; // Ensure the path is correct
+import HomePage from './pages/HomePage';
+import BlogsPage from './pages/BlogsPage';
+import BlogDetailPage from './pages/BlogDetailPage';
+import Header from './components/Header';
 
-const theme = createTheme({
-  typography: {
-    fontFamily: "Prompt, Arial, sans-serif",
-    h1: { fontSize: "2.5rem", fontWeight: 700 },
-    body1: { fontSize: "1rem" },
-  },
-  palette: {
-    primary: {
-      main: "#1976d2",
-    },
-    secondary: {
-      main: "#f50057", 
-    },
-    background: {
-      default: "#f4f4f4", 
-    },
-  },
-});
-
-function App() {
+const App = () => {
   return (
-    <div className="App">
-    </div>
+    <BlogProvider> 
+      <Header />
+      <Router>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/blogs" element={<BlogsPage />} />
+          <Route path="/blogs/:id" element={<BlogDetailPage />} />
+        </Routes>
+      </Router>
+    </BlogProvider>
   );
-}
+};
 
 export default App;
