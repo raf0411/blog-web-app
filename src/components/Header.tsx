@@ -11,13 +11,13 @@ const Header = () => {
         borderBottomColor: "primary.main",
       }}
     >
-      <Link to={"/blogs"} style={{ textDecoration: "none", color: "inherit" }}>
+      <Link to={"/blogs"} style={{ textDecoration: "none", color: "inherit", display: "inline-block" }}>
         <Typography
           variant="h1"
           fontSize={40}
           sx={{
             cursor: "pointer", width: "fit-content", transition: '.2s', "&:hover": {
-            color: "primary.main"
+              color: "primary.main",
           } }}
           draggable="true"
         >
