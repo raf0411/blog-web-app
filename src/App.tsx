@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import CreateBlogPage from "./pages/CreateBlogPage";
 import UpdateBlogPage from "./pages/UpdateBlogPage";
 import ErrorPage from "./pages/ErrorPage";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
           <Route path="/update-blog/:id" element={<UpdateBlogPage />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
+        <Footer />
       </BlogProvider>
     </Router>
   );

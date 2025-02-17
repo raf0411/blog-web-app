@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
 
 const Header = () => {
-  return (
+  const content = (
     <Box
       component="header"
       sx={{
@@ -10,11 +10,19 @@ const Header = () => {
         borderBottomColor: "primary.main",
       }}
     >
-      <Typography variant="h1" fontWeight="700" fontSize={40} sx={{cursor: "pointer", width:"fit-content"}} draggable="true">
+      <Typography
+        variant="h1"
+        fontWeight="700"
+        fontSize={40}
+        sx={{ cursor: "pointer", width: "fit-content" }}
+        draggable="true"
+      >
         Blog.com
       </Typography>
     </Box>
   );
+
+  return content;
 };
 
 export default Header;
