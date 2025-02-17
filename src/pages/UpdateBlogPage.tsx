@@ -37,7 +37,7 @@ const UpdateBlogPage = () => {
     if (!blogToUpdate) return;
 
     // Validation
-    if (title.length > 30) {
+    if (title.length > 50) {
       alert("Title should not be more than 30 characters!");
       return;
     }
