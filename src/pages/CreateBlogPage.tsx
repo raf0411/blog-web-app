@@ -23,26 +23,12 @@ const CreateBlogPage = () => {
     e.preventDefault();
 
     // Validation
-    const titleWordCount = title.split(/\s+/).filter(Boolean).length;
-    const titleLength = title.length;
-
-    const contentWordCount = content.split(/\s+/).filter(Boolean).length;
-    const contentLength = content.length;
-
-    if (titleWordCount > 10) {
-      alert("Title should not be more than 10 words!");
-      return;
-    } 
-    if (titleLength > 30) {
+    if (title.length > 30) {
       alert("Title should not be more than 30 characters!");
       return;
     }
 
-    if (contentWordCount > 1000) {
-      alert("Content should not be more than 1000 words!");
-      return;
-    }
-    if (contentLength > 6000) {
+    if (content.length > 6000) {
       alert("Content should not be more than 6000 characters!");
       return;
     }
