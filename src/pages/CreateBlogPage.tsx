@@ -23,8 +23,8 @@ const CreateBlogPage = () => {
     e.preventDefault();
 
     // Validation
-    if (title.length > 50) {
-      alert("Title should not be more than 30 characters!");
+    if (title.length > 100) {
+      alert("Title should not be more than 100 characters!");
       return;
     }
 
