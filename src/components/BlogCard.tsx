@@ -1,5 +1,5 @@
 import { Box, Button, Container, Typography } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useBlogs } from "../contexts/BlogProvider";
 
 type Blog = {
@@ -14,7 +14,12 @@ type PropsType = {
 };
 
 const BlogCard = ({ blog }: PropsType) => {
+  const navigate = useNavigate();
   const { removeBlog } = useBlogs();
+
+  const handleUpdate = (id: Number) => {
+    navigate(`/update-blog/${id}`);
+  };
 
   return (
     <Container
@@ -29,6 +34,7 @@ const BlogCard = ({ blog }: PropsType) => {
         justifyContent: "space-between",
         alignItems: "center",
         width: "800px",
+        gap: '50px'
       }}
     >
       <Box
@@ -38,7 +44,7 @@ const BlogCard = ({ blog }: PropsType) => {
           gap: "10px",
         }}
       >
-        <Typography variant="h1" fontSize={28}>
+        <Typography variant="h1" fontSize={28} textAlign='justify'>
           {blog.title}
         </Typography>
         <Typography variant="subtitle1" component="p" textAlign="justify">
@@ -65,6 +71,7 @@ const BlogCard = ({ blog }: PropsType) => {
         >
           <Button
             title="Edit"
+            onClick={() => handleUpdate(blog.id)}
             sx={{
               padding: "0",
               borderRadius: "4px",

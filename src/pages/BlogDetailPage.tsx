@@ -23,7 +23,7 @@ const BlogDetailPage = () => {
       }
     }>
       <Link to={"/blogs"} style={{ color: "#FFD0EC", width: "fit-content" }}>back to blogs</Link>
-      <Typography variant="h2" fontWeight="bold">{blog.title}</Typography>
+      <Typography variant="h2" fontWeight="bold" textAlign='justify'>{blog.title}</Typography>
       <Typography variant="subtitle1" component="p">{blog.date}</Typography>
       <Typography variant="subtitle1" component="p" textAlign="justify">{blog.content}</Typography>
     </Container>

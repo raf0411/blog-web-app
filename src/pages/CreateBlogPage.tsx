@@ -103,7 +103,7 @@ const CreateBlogPage = () => {
             fullWidth
             multiline
             required
-            rows={6}
+            rows={10}
             value={content}
             onChange={(e) => setContent(e.target.value)}
           />
