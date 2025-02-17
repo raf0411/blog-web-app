@@ -77,6 +77,7 @@ export const BlogProvider = ({ children }: BlogProviderProps) => {
   // DELETE
   const removeBlog = (id: number) => {
     setBlogs((prevBlogs) => prevBlogs.filter((blog) => blog.id !== id));
+    alert(`Blog ID: ${id} has successfully been deleted!`);
   };
 
   // UPDATE
