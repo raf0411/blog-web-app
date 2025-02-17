@@ -72,6 +72,7 @@ export const BlogProvider = ({ children }: BlogProviderProps) => {
   // CREATE
   const addBlog = (newBlog: Blog) => {
     setBlogs((prevBlogs) => [...prevBlogs, newBlog]);
+    alert(`Blog has successfully addedd!`);
   };
 
   // DELETE
@@ -87,6 +88,7 @@ export const BlogProvider = ({ children }: BlogProviderProps) => {
         blog.id === id ? { ...blog, ...modifiedFields } : blog
       )
     );
+    alert(`Blog ID: ${id} has successfully been updated!`);
   };
 
   return (
