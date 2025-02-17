@@ -20,7 +20,7 @@ const BlogList = () => {
           display: "flex",
           flexDirection: "column",
           gap: "30px",
-          paddingBottom: "50px",
+          marginBottom: "50px",
         }}
       >
         {blogs.map((blog) => (
@@ -28,7 +28,15 @@ const BlogList = () => {
         ))}
       </Box>
     ) : (
-      <Typography variant="h1" fontSize={24}>No posts yet...</Typography>
+      <Typography
+        sx={{
+          marginBottom: "50px",
+        }}
+        variant="h1"
+        fontSize={24}
+      >
+        No posts yet...
+      </Typography>
     );
 
   return content;
