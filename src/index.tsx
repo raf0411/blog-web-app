@@ -41,9 +41,43 @@ const theme = createTheme({
           "&:hover": {
             backgroundColor: "#B3A3C4",
           },
-        }
-      }
-    }
+        },
+      },
+    },
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          backgroundColor: '',
+          border: "1px solid",
+          borderColor: "#81689D",
+          borderRadius: '8px',
+          outline: 'none',
+          padding: '0',
+          "& .MuiInputLabel-root": {
+            color: '#FFD0EC',
+          },
+          "&:hover": {
+            borderColor: "#81689D",
+            backgroundColor: "transparent",
+          },
+          "&:focus": {
+            borderColor: "#81689D",
+            backgroundColor: "transparent",
+          },
+        },
+      },
+    },
+    MuiFilledInput: {
+      styleOverrides: {
+        root: {
+          backgroundColor: "transparent",
+          borderBottom: "none",
+          "&.Mui-focused": {
+            borderBottom: "none",
+          },
+        },
+      },
+    },
   },
 });
 

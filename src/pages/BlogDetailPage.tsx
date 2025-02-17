@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
 import { useBlogs } from "../contexts/BlogProvider";
-import { Box, colors, Typography } from "@mui/material";
+import { Box, colors, Container, Typography } from "@mui/material";
 
 const BlogDetailPage = () => {
   const { id } = useParams();
@@ -14,7 +14,7 @@ const BlogDetailPage = () => {
   }
 
   return (
-    <Box sx={
+    <Container sx={
       {
         padding: "24px 32px",
         display: "flex",
@@ -26,7 +26,7 @@ const BlogDetailPage = () => {
       <Typography variant="h2" fontWeight="bold">{blog.title}</Typography>
       <Typography variant="subtitle1" component="p">{blog.date}</Typography>
       <Typography variant="subtitle1" component="p" textAlign="justify">{blog.content}</Typography>
-    </Box>
+    </Container>
   );
 };
 

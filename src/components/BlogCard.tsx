@@ -23,6 +23,7 @@ const BlogCard = ({ blog }: PropsType) => {
         borderRadius: "8px",
         padding: "32px 24px",
         display: "flex",
+        justifyContent: "space-between",
         alignItems: "center",
         width: "800px",
       }}
@@ -38,7 +39,7 @@ const BlogCard = ({ blog }: PropsType) => {
           {blog.title}
         </Typography>
         <Typography variant="subtitle1" component="p" textAlign="justify">
-          {blog.content.slice(0, 103) + "..."}
+          {(blog.content).length > 103 ? blog.content.slice(0, 103) + "..." : blog.content}
         </Typography>
       </Box>
       <Box

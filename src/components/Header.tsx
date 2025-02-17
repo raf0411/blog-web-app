@@ -1,7 +1,6 @@
-import { Box, Typography, Link } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 const Header = () => {
-  
   return (
     <Box
       component="header"
@@ -11,7 +10,7 @@ const Header = () => {
         borderBottomColor: "primary.main",
       }}
     >
-      <Typography variant="h1" fontWeight="700" fontSize={40}>
+      <Typography variant="h1" fontWeight="700" fontSize={40} sx={{cursor: "pointer", width:"fit-content"}} draggable="true">
         Blog.com
       </Typography>
     </Box>
