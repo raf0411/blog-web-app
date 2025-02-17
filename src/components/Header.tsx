@@ -1,4 +1,5 @@
 import { Box, Typography } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const content = (
@@ -6,19 +7,23 @@ const Header = () => {
       component="header"
       sx={{
         padding: "16px 32px",
-        borderBottom: "1px solid",
+        borderBottom: "2px solid",
         borderBottomColor: "primary.main",
       }}
     >
-      <Typography
-        variant="h1"
-        fontWeight="700"
-        fontSize={40}
-        sx={{ cursor: "pointer", width: "fit-content" }}
-        draggable="true"
-      >
-        Blog.com
-      </Typography>
+      <Link to={"/blogs"} style={{ textDecoration: "none", color: "inherit" }}>
+        <Typography
+          variant="h1"
+          fontSize={40}
+          sx={{
+            cursor: "pointer", width: "fit-content", transition: '.2s', "&:hover": {
+            color: "primary.main"
+          } }}
+          draggable="true"
+        >
+          Blog.com
+        </Typography>
+      </Link>
     </Box>
   );
 

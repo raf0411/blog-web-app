@@ -7,8 +7,8 @@ import '@fontsource/prompt';
 
 const theme = createTheme({
   typography: {
-    fontFamily: "Prompt, Arial, sans-serif",
-    h1: { fontSize: "2.5rem", fontWeight: 700 },
+    fontFamily: "Prompt, sans-serif",
+    h1: { fontSize: "2.5rem", fontWeight: 900},
     body1: { fontSize: "1rem" },
   },
   palette: {
@@ -32,12 +32,13 @@ const theme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
+          textTransform: 'none',
           backgroundColor: "#81689D",
           color: "#FFD0EC",
           padding: "12px 48px",
           fontWeight: "bold",
           borderRadius: "8px",
-          fontSize: "18px",
+          fontSize: "1.5em",
           "&:hover": {
             backgroundColor: "#B3A3C4",
           },

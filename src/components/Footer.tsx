@@ -8,7 +8,7 @@ const Footer = () => {
       component="footer"
       sx={{
         padding: '32px',
-        borderTop: "1px solid",
+        borderTop: "2px solid",
         borderColor: "primary.main",
         marginTop: '50px',
       }}

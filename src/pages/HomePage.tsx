@@ -17,7 +17,7 @@ const HomePage = () => {
         alignItems: "center",
         minHeight: "100vh",
         marginTop: "50px",
-        gap: "150px",
+        gap: "100px",
       }
     }>
       <Typography variant='h2' fontWeight='bold' fontSize={48}>Welcome to my blogs!</Typography>

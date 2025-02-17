@@ -44,10 +44,10 @@ const BlogCard = ({ blog }: PropsType) => {
           gap: "10px",
         }}
       >
-        <Typography variant="h1" fontSize={28} textAlign='justify'>
+        <Typography variant="h1" fontSize={28}>
           {blog.title}
         </Typography>
-        <Typography variant="subtitle1" component="p" textAlign="justify">
+        <Typography variant="body1" component="p" textAlign="justify" fontWeight='light'>
           {(blog.content).length > 103 ? blog.content.slice(0, 103) + "..." : blog.content}
         </Typography>
       </Box>

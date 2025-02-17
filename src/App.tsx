@@ -30,10 +30,12 @@ const App = () => {
             display: "flex",
             flexDirection: "column",
             minHeight: "100vh", 
+            scrollBehavior: 'smooth',
+            background: 'linear-gradient(90deg, rgba(49,24,76,1) 0%, rgba(47,7,67,1) 70%)',
           }}
         >
           <Header />
-          <Box sx={{ flexGrow: 1 }}> 
+          <Box sx={{ flexGrow: 1}}> 
             <ScrollToTop />
             <Routes>
               <Route path="/" element={<HomePage />} />
