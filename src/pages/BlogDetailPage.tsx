@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useBlogs } from "../contexts/BlogProvider";
 import { Box, colors, Container, Typography } from "@mui/material";
@@ -8,6 +8,10 @@ const BlogDetailPage = () => {
   const { blogs } = useBlogs(); 
 
   const blog = blogs.find((blog) => blog.id === Number(id));
+
+  useEffect(() => {
+    document.title = `Blog Detail | ${blog?.id}`
+  }, []);
 
   if (!blog) {
     return <Typography variant="h2">Blog not found!</Typography>;

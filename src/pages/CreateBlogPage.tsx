@@ -5,7 +5,7 @@ import {
   FormLabel,
   TextField,
 } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useBlogs } from "../contexts/BlogProvider";
 import { useNavigate } from "react-router-dom";
 
@@ -14,6 +14,10 @@ const CreateBlogPage = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const { addBlog } = useBlogs();
+
+  useEffect(() => {
+    document.title = "Create Blog"
+  }, []);
 
   const submitNewBlog = (e: React.FormEvent) => {
     e.preventDefault();

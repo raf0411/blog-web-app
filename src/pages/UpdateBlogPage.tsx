@@ -10,20 +10,21 @@ import { useBlogs } from "../contexts/BlogProvider";
 import { useNavigate, useParams } from "react-router-dom";
 
 const UpdateBlogPage = () => {
-  const { id } = useParams(); // Get the blog ID from the URL
+  const { id } = useParams(); 
   const navigate = useNavigate();
-  const { blogs, editBlog } = useBlogs(); // Access blogs and editBlog from context
+  const { blogs, editBlog } = useBlogs();
 
-  // Find the blog that we want to update
   const blogToUpdate = blogs.find((blog) => blog.id === Number(id));
 
-  // Local state for the form inputs, pre-populated if blog exists
   const [title, setTitle] = useState(blogToUpdate ? blogToUpdate.title : "");
   const [content, setContent] = useState(
     blogToUpdate ? blogToUpdate.content : ""
   );
 
-  // If the blog data isn't available immediately, update state when it loads
+  useEffect(() => {
+    document.title = `Update Blog | ${blogToUpdate?.id}`
+  }, []);
+
   useEffect(() => {
     if (blogToUpdate) {
       setTitle(blogToUpdate.title);
@@ -35,7 +36,6 @@ const UpdateBlogPage = () => {
     e.preventDefault();
     if (!blogToUpdate) return;
 
-    // Create an object with updated fields; you can update date as well if needed
     const updatedFields = {
       title,
       content,
@@ -46,16 +46,13 @@ const UpdateBlogPage = () => {
       }),
     };
 
-    // Call the editBlog function from context with the blog id and updated fields
     editBlog(blogToUpdate.id, updatedFields);
 
     console.log("Blog Updated:", { title, content });
 
-    // Navigate back to the blogs page after updating
     navigate("/blogs");
   };
 
-  // Render a fallback if the blog wasn't found
   if (!blogToUpdate) {
     return (
       <Container sx={{ padding: "32px" }}>

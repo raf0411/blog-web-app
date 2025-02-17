@@ -1,7 +1,13 @@
 import { Button, Container, Typography } from '@mui/material'
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom'
 
 const ErrorPage = () => {
+
+  useEffect(() => {
+    document.title = "Error 404"
+  }, []);
+
   return (
     <Container sx={
       {

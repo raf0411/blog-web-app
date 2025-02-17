@@ -9,7 +9,8 @@ const Footer = () => {
       sx={{
         padding: '32px',
         borderTop: "1px solid",
-        borderBottomColor: "primary.main",
+        borderColor: "primary.main",
+        marginTop: '50px',
       }}
     >
       <Typography component='p'>&copy; {currentYear} @raf0411</Typography>

@@ -23,7 +23,7 @@ const BlogList = () => {
           marginBottom: "50px",
         }}
       >
-        {blogs.map((blog) => (
+        {blogs.slice().reverse().map((blog) => (
           <BlogCard key={blog.id} blog={blog} />
         ))}
       </Box>

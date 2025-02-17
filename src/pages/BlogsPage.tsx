@@ -1,8 +1,13 @@
 import { Box, Button, Container } from '@mui/material';
 import BlogList from '../components/BlogList';
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const BlogsPage = () => {
+
+  useEffect(() => {
+    document.title = "Blogs"
+  }, []);
 
   const content =
     <Container sx={{

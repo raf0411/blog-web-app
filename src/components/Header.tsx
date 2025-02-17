@@ -6,7 +6,7 @@ const Header = () => {
       component="header"
       sx={{
         padding: "16px 32px",
-        borderBottom: "2px solid",
+        borderBottom: "1px solid",
         borderBottomColor: "primary.main",
       }}
     >
